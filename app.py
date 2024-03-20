@@ -38,17 +38,15 @@ app.layout = html.Div([
                 options = [{'label': country, 'value': country} for country in data_fixed.country.unique()], # this gives the dropdown options as the diff countries in the country column of df
                 id = "dropdown-country", 
                 multi = True, 
-                value = ['UK', 'Angola'], 
-                style={'width': '48%', 'display': 'inline-block'}    # makes it so it takes up half (6/12)
+                value = ['UK', 'Angola']
             )
-        ], className = "six columns"), # makes it so it takes up half (6/12)
+        ], style={'width': '48%', 'display': 'inline-block'}), # makes it so it takes up half (6/12)
         html.Div([
             dcc.RangeSlider(min = 1800, max = 2100, id = 'range-slide-yr', 
                             value = [1800, 1900], 
                             marks = slider_marks,  # markers for every 100 yrs 
-                            tooltip = {'placement' : 'bottom', 'always_visible': True}, 
-                            style={'width': '48%', 'display': 'inline-block', 'float': 'right'})    # makes it so it takes up half (6/12)
-        ], className = "six columns") # makes it so it takes up half (6/12)
+                            tooltip = {'placement' : 'bottom', 'always_visible': True}) 
+        ], style={'width': '48%', 'display': 'inline-block', 'float': 'right'}) # makes it so it takes up half (6/12)
     ], className = "row"), # puts the slider & dropdown on one row 
     html.Div([    
         dcc.Graph(id = 'line-graph')
