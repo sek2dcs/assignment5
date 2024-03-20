@@ -31,17 +31,17 @@ app.layout = html.Div([
                 multi = True, 
                 value = ['UK', 'Angola']
             )
-        ], className="col-md-6"), 
+        ], className = "six columns"), 
         html.Div([
             dcc.RangeSlider(min = 1800, max = 2100, id = 'range-slide-yr', 
                             value = [1800, 1900], 
                             marks = slider_marks,
                             tooltip = {'placement' : 'bottom', 'always_visible': True})
-        ], className="col-md-6")
+        ], className = "six columns")
     ], className = "row"),
     html.Div([    
         dcc.Graph(id = 'line-graph')
-    ])
+])
 ])
 
 
