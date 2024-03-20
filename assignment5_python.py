@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd 
 
 # reading in csv
-data = pd.read_csv("/Users/sophiekim/Desktop/4th year (spring)/DS 4003/A4_student/gdp_pcap.csv")
+data = pd.read_csv("https://github.com/sek2dcs/assignment5/blob/main/gdp_pcap.csv")
 
 # using panadas melt function to try to get the columns to be country, year, and gdp per capita
 # so it is easier to code the app
