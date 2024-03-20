@@ -30,14 +30,14 @@ app.layout = html.Div([
             id = "dropdown-country", 
             multi = True, 
             value = ['UK', 'Angola']
-        ), className = "six columns", 
+        ), className = "col-md-6", 
     ), 
     html.Div(
         dcc.RangeSlider(min = 1800, max = 2100, id = 'range-slide-yr', 
                         value = [1800, 1900], 
                         marks = slider_marks,
                          tooltip = {'placement' : 'bottom', 'always_visible': True}), 
-        className = "six columns" 
+        className = "col-md-6"
     )
 ], className = "row"),
 html.Div([    
