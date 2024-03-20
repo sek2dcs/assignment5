@@ -1,8 +1,14 @@
 from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 import pandas as pd 
+import requests
 
-data_fixed = pd.read_csv("https://github.com/sek2dcs/assignment5/blob/main/data_fixed.csv", on_bad_lines = 'skip', encoding='utf-8')
+url = "https://github.com/sek2dcs/assignment5/raw/main/data_fixed.csv"
+response = requests.get(url)
+with open("data_fixed.csv", "wb") as f:
+    f.write(response.content)
+
+data_fixed = pd.read_csv("data_fixed.csv")
 data_fixed = data_fixed.reset_index()
 
 unique_years = sorted([int(year) for year in data_fixed['year'].unique()])
