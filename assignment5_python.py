@@ -7,20 +7,6 @@ import pandas as pd
 data_fixed = pd.read_csv("https://github.com/sek2dcs/assignment5/blob/main/data_fixed.csv", on_bad_lines = 'skip')
 data_fixed = data_fixed.reset_index()
 
-# using panadas melt function to try to get the columns to be country, year, and gdp per capita
-# so it is easier to code the app
-#data_fixed = pd.melt(data, id_vars='country', var_name='year', value_name='gdp_per_capita')
-
-# converting year and gdp_per_capita columns to integers
-# year first...
-data_fixed['year'] = data_fixed['year'].astype(int)
-
-# gdp_per_capita has some values that are k instead of 1,0000 
-# getting the values that have the 'k' at the end then converting them to floats (bc demicals)
-#data_fixed.loc[data_fixed['gdp_per_capita'].str.endswith('k', na = False), 'gdp_per_capita'] = data_fixed.loc[data_fixed['gdp_per_capita'].str.endswith('k', na = False), 'gdp_per_capita'].str.rstrip('k').astype(float) * 1000
-# now converting the rest of the gdp_per_capita to floats 
-#data_fixed['gdp_per_capita'] = data_fixed['gdp_per_capita'].astype(float) 
-
 # making filtered df of unique years for slider marks 
 # have to make into integers so that the filtered_years works (to be divisble by 100)
 unique_years = sorted([int(year) for year in data_fixed['year'].unique()])
