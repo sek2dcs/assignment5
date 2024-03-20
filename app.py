@@ -24,8 +24,11 @@ filtered_years = [year for year in unique_years if year % 100 == 0]
 # creating dictionary of the diff years 
 slider_marks = {year: str(year) for year in filtered_years}
 
-# intializing app 
-app = Dash(__name__)
+# loading in stylesheet
+stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css'] 
+
+# initializing app 
+app = Dash(__name__, external_stylesheets=stylesheets)
 server = app.server
 
 # building app
