@@ -37,8 +37,8 @@ server = app.server
 # building app 
 app.layout = html.Div([
     html.H1(children = "Gapminder - GDP per capita from 1800-2100"), # title   (below is the paragraph -- in the second div)
-    html.Div(children = "This dataset is from Gapminder's estimates of GDP per capita for almost all countries in the world from 18000 to 2100. The creators of this dataset were able to make the GDPs of each country on the same 'scale' by standardizing using a World Bank indicator. Depending on the year, Gapminder had different methods on how to estimate the GDP per capita for each country. Additionally, Syria did not have any official GDP per capita estimate since 2010, so Gapminder estimated these values. This app has a multi-select dropdown where the user can select multiple countries, a range slider for the years in the dataset, and a line graph displaying the gdp per captia for each country from 1800-2100.")
-,   html.Div([ # make another parent div --> for the stuff going in one row
+    html.Div(children = "This dataset is from Gapminder's estimates of GDP per capita for almost all countries in the world from 18000 to 2100. The creators of this dataset were able to make the GDPs of each country on the same 'scale' by standardizing using a World Bank indicator. Depending on the year, Gapminder had different methods on how to estimate the GDP per capita for each country. Additionally, Syria did not have any official GDP per capita estimate since 2010, so Gapminder estimated these values. This app has a multi-select dropdown where the user can select multiple countries, a range slider for the years in the dataset, and a line graph displaying the gdp per captia for each country from 1800-2100."),
+    html.Div([
     html.Div(
         dcc.Dropdown(
             options = [{'label': country, 'value': country} for country in data_fixed.country.unique()], # this gives the dropdown options as the diff countries in the country column of df
