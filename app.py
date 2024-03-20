@@ -29,14 +29,16 @@ app.layout = html.Div([
                 options = [{'label': country, 'value': country} for country in data_fixed.country.unique()], 
                 id = "dropdown-country", 
                 multi = True, 
-                value = ['UK', 'Angola']
+                value = ['UK', 'Angola'], 
+                style={'width': '48%', 'display': 'inline-block'}
             )
         ], className = "six columns"), 
         html.Div([
             dcc.RangeSlider(min = 1800, max = 2100, id = 'range-slide-yr', 
                             value = [1800, 1900], 
                             marks = slider_marks,
-                            tooltip = {'placement' : 'bottom', 'always_visible': True})
+                            tooltip = {'placement' : 'bottom', 'always_visible': True}, 
+                            style={'width': '48%', 'display': 'inline-block', 'float': 'right'})
         ], className = "six columns")
     ], className = "row"),
     html.Div([    
