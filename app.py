@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd 
 
 # reading in csv
-data_fixed = pd.read_csv("https://github.com/sek2dcs/assignment5/blob/main/data_fixed.csv", on_bad_lines = 'skip')
+data_fixed = pd.read_csv("https://github.com/sek2dcs/assignment5/blob/main/data_fixed.csv", on_bad_lines = 'skip', encoding='utf-8')
 data_fixed = data_fixed.reset_index()
 
 # making filtered df of unique years for slider marks 
